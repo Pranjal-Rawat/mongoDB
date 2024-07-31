@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.2"
+  },
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "book record bakend",
+  "main": "databaseConnection.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pranjal-Rawat/mongoDB.git"
+  },
+  "author": "pr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pranjal-Rawat/mongoDB/issues"
+  },
+  "homepage": "https://github.com/Pranjal-Rawat/mongoDB#readme",
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.4"
+  }
+}
