@@ -1,5 +1,5 @@
 const UserModel=require("./usermodel");
 const BookModel=require("./booksmodel");
 
-module.exports={UserModel, BooksModel};  
+module.exports={UserModel, BookModel};  
 
