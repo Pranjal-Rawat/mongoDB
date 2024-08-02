@@ -20,10 +20,7 @@ const router = express.Router();
 //         data: books,
 //     })
 // })
-
 router.get("/", getAllBooks)
-
-
 /**
  * Route: /books/:id
  * Method: GET
@@ -45,11 +42,7 @@ router.get("/", getAllBooks)
 //         data: book
 //     })
 // })
-
-
 router.get("/:id", getSingleBookById)
-
-
 /**
  * Route: /books
  * Method: POST
@@ -74,10 +67,7 @@ router.get("/:id", getSingleBookById)
 //         data: books
 //     })
 // })
-
-
 router.post("/", addNewBook)
-
 /**
  * Route: /books/:id
  * Method: PUT
@@ -111,11 +101,7 @@ router.post("/", addNewBook)
 //         data: updateBook
 //     })
 // })
-
-
 router.put('/:id', updateBookById)
-
-
 /**
  * Route: /books/:id
  * Method: DELETE
@@ -132,10 +118,8 @@ router.delete("/:id", (req, res)=>{
     success: false,
     message: "Book Not Found"
     })}
-
 // var arr = ["abc", "rohan", "rohit"];
             // 0,      1,       2
-
     const index = books.indexOf(book);
     //  const index = users.reduce((each, i)=>{
     //     if(each.id===id){

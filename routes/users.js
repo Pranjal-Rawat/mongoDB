@@ -5,7 +5,6 @@ const {UserModel, BookModel} = require("../models");
 const { getAllUsers, getSingleUserById, addNewUser, updateUserById } = require("../controllers/user-controller");
 
 const router = express.Router();
-
 /**
  * Route: /users
  * Method: GET
@@ -20,8 +19,6 @@ const router = express.Router();
 //     })
 // })
 router.get("/", getAllUsers)
-
-
 /**
  * Route: /users/:id
  * Method: GET
@@ -43,10 +40,7 @@ router.get("/", getAllUsers)
 //         data: user
 //     })
 // })
-
 router.get("/:id", getSingleUserById)
-
-
 /**
  * Route: /users
  * Method: POST
@@ -71,10 +65,7 @@ router.get("/:id", getSingleUserById)
 //         data: users
 //     })
 // })
-
 router.post("/", addNewUser)
-
-
 /**
  * Route: /users/:id
  * Method: PUT
@@ -108,10 +99,7 @@ router.post("/", addNewUser)
 //         data: updateUser
 //     })
 // })
-
 router.put('/:id', updateUserById)
-
-
 /**
  * Route: /users/:id
  * Method: DELETE
