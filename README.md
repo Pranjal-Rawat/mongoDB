@@ -67,3 +67,13 @@ mongodb+srv://pranjalr842:7danT1nYbXsNhzgu@cluster0.rvgheln.mongodb.net/?retryWr
  Model      == Handles task Structure of DATABASE
  View       == Frontend REACTJS
  Controller == Brain or logic of a route
+
+
+## ReactJS
+>>SPA
+>>Vitual DOM
+>>Data-binding(Single Direction Flow)
+>>Components
+   >>Class BAsed Components(Oldest method)
+   >>Functional Based Components(New methods)
+     

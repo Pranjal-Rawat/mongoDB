@@ -1,5 +1,7 @@
 const express = require("express");
 const {users} = require("./data/users.json")
+const cors = require('cors');
+
 
 // database connection
 const DbConnection = require("./databaseConnection")
@@ -13,6 +15,9 @@ dotenv.config()
 const app = express();
 DbConnection()
 
+app.use(cors({
+    origin:'*'
+}));
 const PORT = 8081;
 
 app.use(express.json());
@@ -36,4 +41,4 @@ app.all("*", (req, res)=>{
 
 app.listen(PORT, ()=>{
     console.log(`Server is up n running on port ${PORT}`)
-})
+});
