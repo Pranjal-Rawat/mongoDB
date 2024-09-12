@@ -11,7 +11,8 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
+    const BaseUrl = "http://localhost:8081";
+    // const BaseUrl = "https://mongo-db-kohl.vercel.app/";
     useEffect(() => {
         
         const checkAuth = async () => {
@@ -35,7 +36,7 @@ export const AuthProvider = ({ children }) => {
             setUser(response.data.user);
         } catch (error) {
             console.error('Login failed', error);
-            throw error; // Pass the error to the component calling login
+            throw error; 
         } finally {
             setLoading(false);
         }
@@ -59,6 +60,7 @@ export const AuthProvider = ({ children }) => {
         login,
         logout,
         loading,
+        BaseUrl
     };
 
     return (
@@ -68,3 +70,5 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+
+// import {Suspense} from 'module'

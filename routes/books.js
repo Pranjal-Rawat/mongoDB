@@ -4,6 +4,7 @@ const {books} = require("../data/books.json")
 
 const {UserModel, BookModel} = require("../models");
 const { getAllBooks, getSingleBookById, addNewBook, updateBookById } = require("../controllers/book-controller");
+const booksmodel = require("../models/booksmodel");
 
 const router = express.Router();
 
@@ -109,10 +110,11 @@ router.put('/:id', updateBookById)
  * Access: Public
  * Parameters: ID
  */
-router.delete("/:id", (req, res)=>{
+router.delete("/:id",async (req, res)=>{
      const {id} = req.params;
 
-    const book = books.find((each)=> each.id ===id);
+    // const book = books.find((each)=> each.id ===id);
+    const book = await booksmodel.findOneAndDelete({_id:id})
     if(!book){
         return res.status(404).json({
     success: false,
