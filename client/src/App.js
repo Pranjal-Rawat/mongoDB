@@ -1,21 +1,19 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ProtectedRoute from './utils/ProtectedRoute.jsx';
+import ProtectedRoute from './utils/ProtectedRoute';
 import Sidebar from './pages/Admin/Sidebar.jsx';
 import { AuthProvider } from './AuthContext.jsx';
 import { CircularProgress } from '@mui/material';
 
-
-
 export default function App() {
-    const Home = React.lazy(() => import('./pages/Home.jsx'));
-    const Admin = React.lazy(() => import('./pages/Admin/Admin.jsx'));
-    const AddBook = React.lazy(() => import('./pages/Admin/AddBook.jsx'));
-    const DeleteBook = React.lazy(() => import('./pages/Admin/DeleteBook.jsx'));
-    const UpdateBook = React.lazy(() => import('./pages/Admin/UpdateBook.jsx'));
-    const ViewBooks = React.lazy(() => import('./pages/Admin/ViewBooks.jsx'));
-    const ViewUsers = React.lazy(() => import('./pages/Admin/ViewUsers.jsx'));
-    const AddUser = React.lazy(() => import('./pages/Admin/AddUser.jsx'));
+    const Home = React.lazy(() => import('./pages/Home'));
+    const Admin = React.lazy(() => import('./pages/Admin/Admin'));
+    const AddBook = React.lazy(() => import('./pages/Admin/AddBook'));
+    const DeleteBook = React.lazy(() => import('./pages/Admin/DeleteBook'));
+    const UpdateBook = React.lazy(() => import('./pages/Admin/UpdateBook'));
+    const ViewBooks = React.lazy(() => import('./pages/Admin/ViewBooks'));
+    const ViewUsers = React.lazy(() => import('./pages/Admin/ViewUsers'));
+    const AddUser = React.lazy(() => import('./pages/Admin/AddUser'));
 
     return (
         <AuthProvider>
