@@ -1,36 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { Container, TextField, Button, Typography, Box } from '@mui/material';
 import axios from 'axios';
-import { Container, Typography, Button, List, ListItem, ListItemText, Box } from '@mui/material';
 import { useAuth } from '../../AuthContext';
 
 export default function DeleteBook() {
-    const [books, setBooks] = useState([]);
+    const { BaseUrl } = useAuth();
+    const [bookId, setBookId] = useState('');
     const [message, setMessage] = useState('');
-    const {BaseUrl} = useAuth();
-    useEffect(() => {
-        // Fetch the list of books from the backend
-        const fetchBooks = async () => {
-            try {
-                const response = await axios.get(`${BaseUrl}/books`);
-                setBooks(response.data.data);
-            } catch (error) {
-                console.error('Error fetching books:', error);
-                setMessage('Failed to fetch books.');
-            }
-        };
 
-        fetchBooks();
-    }, []);
+    const handleChange = (e) => {
+        setBookId(e.target.value);
+    };
 
-    const handleDelete = async (id) => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
         try {
-            await axios.delete(`${BaseUrl}/books/${id}`);
-            // Remove the deleted book from the state
-            setBooks(books.filter(book => book._id !== id));
-            setMessage('Book deleted successfully.');
+            const response = await axios.delete(`${BaseUrl}/books/${bookId}`);
+
+            if (response.data.success) {
+                setMessage('Book deleted successfully!');
+                setBookId(''); // Reset the input field
+            } else {
+                setMessage('Failed to delete book. Please try again.');
+            }
         } catch (error) {
             console.error('Error deleting book:', error);
-            setMessage('Failed to delete book.');
+            setMessage('An error occurred. Please try again.');
         }
     };
 
@@ -46,26 +42,23 @@ export default function DeleteBook() {
                 </Typography>
             )}
 
-            <List>
-                {books.map((book) => (
-                    <ListItem key={book._id} divider>
-                        <ListItemText
-                            primary={book.name}
-                            secondary={`Author: ${book.author}, Genre: ${book.genre}, Price: ${book.price}, Publisher: ${book.publisher}`}
-                        />
-                        <Box>
-                            <Button
-                                variant="contained"
-                                color="error"
-                                onClick={() => handleDelete(book._id)}
-                            >
-                               
-                                Delete
-                            </Button>
-                        </Box>
-                    </ListItem>
-                ))}
-            </List>
+            <form onSubmit={handleSubmit}>
+                <Box sx={{ mt: 4 }} textAlign="center">
+                    <TextField
+                        label="Book ID"
+                        variant="outlined"
+                        fullWidth
+                        required
+                        value={bookId}
+                        onChange={handleChange}
+                    />
+                    <Box sx={{ mt: 4 }}>
+                        <Button type="submit" variant="contained" color="primary">
+                            Delete Book
+                        </Button>
+                    </Box>
+                </Box>
+            </form>
         </Container>
     );
 }
