@@ -6,49 +6,55 @@ export default function Sidebar({ wrappedComponent }) {
     return (
         <nav className='flex'>
             <aside className="bg-gray-900 text-white h-screen p-6 w-[250px] shadow-lg">
-                <Typography variant="h5" component="h1" className="text-2xl font-bold mb-8 text-center">
+                <Typography variant="h5" component="h1" style={{ fontFamily: "serif" }} className="text-2xl font-bold mb-8 text-center ">
                     Admin Panel
                 </Typography>
 
                 <List className="space-y-6 mt-4">
+                    <ListItem button component={Link} to="/admin"
+                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1 m-7">
+                        <Typography variant="body1" style={{ fontFamily: "serif" }} className="hover:text-blue-400">
+                            Home
+                        </Typography>
+                    </ListItem>
                     <ListItem button component={Link} to="/admin/add-book"
-                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1">
-                        <Typography variant="body1" className="hover:text-blue-400">
+                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1 m-7">
+                        <Typography variant="body1" style={{ fontFamily: "serif" }} className="hover:text-blue-400">
                             Add Book
                         </Typography>
                     </ListItem>
 
                     <ListItem button component={Link} to="/admin/delete-book"
-                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1">
-                        <Typography variant="body1" className="hover:text-blue-400">
+                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1 m-7">
+                        <Typography variant="body1" style={{ fontFamily: "serif" }} className="hover:text-blue-400">
                             Delete Book
                         </Typography>
                     </ListItem>
 
                     <ListItem button component={Link} to="/admin/update-book"
-                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1">
-                        <Typography variant="body1" className="hover:text-blue-400">
+                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1 m-7">
+                        <Typography variant="body1" style={{ fontFamily: "serif" }} className="hover:text-blue-400">
                             Update Book
                         </Typography>
                     </ListItem>
 
                     <ListItem button component={Link} to="/admin/view-books"
-                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1">
-                        <Typography variant="body1" className="hover:text-blue-400">
+                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1 m-7" >
+                        <Typography variant="body1" style={{ fontFamily: "serif" }} className="hover:text-blue-400">
                             View Books
                         </Typography>
                     </ListItem>
 
                     <ListItem button component={Link} to="/admin/view-users"
-                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1">
-                        <Typography variant="body1" className="hover:text-blue-400">
+                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1 m-7">
+                        <Typography variant="body1" style={{ fontFamily: "serif" }} className="hover:text-blue-400">
                             View Users
                         </Typography>
                     </ListItem>
 
                     <ListItem button component={Link} to="/admin/add-user"
-                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1">
-                        <Typography variant="body1" className="hover:text-blue-400">
+                        className="hover:bg-gray-700 rounded-md p-3 transition duration-500 ease-in-out transform hover:scale-102 hover:translate-x-1 m-7">
+                        <Typography variant="body1" style={{ fontFamily: "serif" }} className="hover:text-blue-400">
                             Add User
                         </Typography>
                     </ListItem>

@@ -11,7 +11,7 @@
   },
   "name": "mongodb",
   "version": "1.0.0",
-  "description": "book record bakend",
+  "description": "book record backend",
   "main": "databaseConnection.js",
   "scripts": {
     "start": "node index.js",

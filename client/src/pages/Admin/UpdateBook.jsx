@@ -18,7 +18,7 @@ export default function UpdateBook() {
                 setBooks(response.data.data);
             } catch (error) {
                 console.error('Error fetching books:', error);
-                setMessage('Failed to fetch books.');
+                setMessage('No Books Found!');
             }
         };
 
